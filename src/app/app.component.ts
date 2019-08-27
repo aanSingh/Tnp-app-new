@@ -47,9 +47,10 @@ export class AppComponent {
     }[]
   };
 
-  showPost;
+  showPost: {data: boolean};
 
   constructor() {
+    this.showPost  = {data: false};
     this.companies = [{
       id: 1,
       name: "Yamaha",
@@ -182,9 +183,11 @@ export class AppComponent {
     var temp;
     temp = this.companies.find(x => x.id == event.companyId);
     this.companyDetails = temp;
-    this.showPost = event.showPosts;
+    // this.showPost = event.showPosts;
+    this.showPost.data = true;
+    console.log(this.showPost)
     // this.companyPosts = temp.posts;
-    console.log(event);
+    console.log(event.showPosts);
   }
 
 }

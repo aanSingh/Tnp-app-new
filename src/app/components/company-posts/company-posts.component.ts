@@ -7,11 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CompanyPostsComponent implements OnInit {
   @Input() companyDetails;
-  @Input() showPost;
+  @Input() showPost: {data: false};
   constructor() { }
 
   ngOnInit() {
-    // console.log(this.companyPosts)
+    console.log(this.showPost)
   }
 
 }

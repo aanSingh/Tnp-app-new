@@ -1,48 +1,5 @@
-<div class="container bg-light shadow pb-4" *ngIf="showPost == true; then postTemplate else welcomePage"></div>
+<div class="container bg-light shadow pb-4" *ngIf="companyDetails.posts.length > 0; else companyData">
+  
+</div>
 
-<ng-template #postTemplate>
-    <p>description {{companyDetails.posts.length}}</p>
-
-  <div *ngIf="companyDetails.posts.length > 0; then showPost else noPost"></div>
-
-  <!-- <div class="container"> -->
-    <!-- <button class="btn btn-primary" (click)="backToCompany()"><i class="fa fa-chevron-left fa-fw"></i>Back</button><hr> -->
-    <!-- <h4 class="text-capitalize font-weight-bold text-primary">Title</h4> -->
-    <!-- <p>description {{companyDetails.posts.length}}
-  {{showPost}}</p>
-  </div> -->
-</ng-template>
-
-<!-- <ng-template #companyData>
-	<div *ngIf="displayCompany; else welcomePage" class="container">
-    <div class="container bg-primary text-light shadow font-weight-bold" style="font-size: 20px;">Blog</div>
-    <app-post [company]="displayCompany" (post)="displayPost($event)"></app-post>
-  </div>
-</ng-template> -->
-
-<ng-template #welcomePage >
-  <div class="container shadow display-4 bg-primary text-light p-2 font-weight-bold text-center">
-    Welcome to Bvicam training and placement cell
-  </div>
-</ng-template>
-
-<ng-template #showPost>
-
-	<div class=" container shadow card my-2 border border-primary border-left-0 border-top-0 border-right-0" *ngFor="let post of companyDetails.posts">
-		<div class="card-body">
-			<a class="card-title text-decoration-none font-weight-bold" href="#" (click)="showPost(post.post_id)" style="font-size: 18px;">{{post.title}}</a>
-			<div class="d-flex justify-content-between font-italic" style="font-size: 12px">
-				<p>By {{post.posted_by}}</p>
-				<p>{{post.posted_on}}</p>
-			</div>
-			<p class="card-text" style="overflow: hidden; text-overflow: ellipsis; width: auto; white-space: nowrap;">{{post.post_description}}</p>
-		</div>
-	</div>
-</ng-template>
-
-<ng-template #noPost>
-	<div class="container shadow p-2">
-		No post available
-	</div>
-</ng-template>
 
