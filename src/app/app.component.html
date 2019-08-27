@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row py-4" style="height: 100vh;">
+    <div class="col-md-3">
+      <app-side-nav (showPosts)="showPosts($event)" [companies]="companies"></app-side-nav>
+      <!-- <app-side-nav (showPost)="getPostData($event)" [companies]="companies"></app-side-nav> -->
+    </div>
+    <div class="col-md-6">
+      <app-company-posts [companyDetails]="companyDetails" [showPost]="showPost"></app-company-posts>
+      <!-- <app-company-data [displayCompany]="displayCompany"></app-company-data> -->
+    </div>
+    <div class="col-md-3">
+      <app-company-info [companyDetails]="companyDetails"></app-company-info>
+      <!-- <app-company-details></app-company-details> -->
+    </div>
+  </div>
+</div>
+
