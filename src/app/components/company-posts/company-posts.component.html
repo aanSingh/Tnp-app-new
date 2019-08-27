@@ -1,6 +1,8 @@
 <div class="container bg-light shadow pb-4" *ngIf="showPost == true; then postTemplate else welcomePage"></div>
 
 <ng-template #postTemplate>
+    <p>description {{companyDetails.posts.length}}</p>
+
   <div *ngIf="companyDetails.posts.length > 0; then showPost else noPost"></div>
 
   <!-- <div class="container"> -->
@@ -25,6 +27,7 @@
 </ng-template>
 
 <ng-template #showPost>
+
 	<div class=" container shadow card my-2 border border-primary border-left-0 border-top-0 border-right-0" *ngFor="let post of companyDetails.posts">
 		<div class="card-body">
 			<a class="card-title text-decoration-none font-weight-bold" href="#" (click)="showPost(post.post_id)" style="font-size: 18px;">{{post.title}}</a>
